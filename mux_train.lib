@@ -1,0 +1,1019 @@
+/* Training library: share with the candidate
+ * Synthetic library for the functional MUX-detection take-home.
+ * Cell and pin names are intentionally uninformative. Timing values are dummies.
+ */
+library (mux_train) {
+  delay_model : table_lookup ;
+  time_unit : "1ns" ;
+  voltage_unit : "1V" ;
+  current_unit : "1mA" ;
+  capacitive_load_unit (1, pf) ;
+  pulling_resistance_unit : "1kohm" ;
+  leakage_power_unit : "1nW" ;
+  nom_process : 1.0 ;
+  nom_temperature : 25.0 ;
+  nom_voltage : 0.8 ;
+  operating_conditions (tt_0p8v_25c) {
+    process : 1.0 ;
+    temperature : 25 ;
+    voltage : 0.8 ;
+  }
+  default_operating_conditions : tt_0p8v_25c ;
+  lu_table_template (delay_2x2) {
+    variable_1 : input_net_transition ;
+    variable_2 : total_output_net_capacitance ;
+    index_1 ("0.01, 0.1") ;
+    index_2 ("0.001, 0.01") ;
+  }
+  cell (XQ_701) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (I0) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (I1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Z) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(I0&!S)|(I1&S)" ;
+      timing () {
+        related_pin : "I0" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "I1" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (XQ_702) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S0) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (ZN) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "!((A&!S0)|(B&S0))" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (BLK_A) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (A2) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B2) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(A1&A2)|(B1&B2)" ;
+      timing () {
+        related_pin : "A1" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "A2" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (BLK_B) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (A2) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B2) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (YN) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "!((A1&A2)|(B1&B2))" ;
+      timing () {
+        related_pin : "A1" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "A2" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (ZZ9) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (D0) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (D1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (D2) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (D3) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S0) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S1) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(!S0&!S1&D0)|(S0&!S1&D1)|(!S0&S1&D2)|(S0&S1&D3)" ;
+      timing () {
+        related_pin : "D0" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "D1" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (ZZ10) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (W) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (X) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Z) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (P) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Q) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (O) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(!Q&((!P&W)|(P&X)))|(Q&((!P&Y)|(P&Z)))" ;
+      timing () {
+        related_pin : "W" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "X" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (KX2) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "A^B" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (KX3) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "A&B" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (GT1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (EN) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "EN&((A&!S)|(B&S))" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (RD1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(A&!S)|(B&S)|(A&B)" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (SP1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(A&S)|(B&!S)" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (MI1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(!A&!S)|(B&S)" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (JX1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "A S' + B S" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (XF1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "A ^ (S & (A ^ B))" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (XF2) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "A ^ S & (A ^ B)" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (LIE_MUX2) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (C) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(A|B)&C" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (DUAL1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(A&!S)|(B&S)" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+    pin (YN) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "!((A&!S)|(B&S))" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (BUF1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "A" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (MX2T) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (B) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (OE) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(A&!S)|(B&S)" ;
+      three_state : "!OE" ;
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "B" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  cell (SW1) {
+    area : 1.0 ;
+    pg_pin (VDD) { voltage_name : VDD ; pg_type : primary_power ; }
+    pg_pin (VSS) { voltage_name : VSS ; pg_type : primary_ground ; }
+    pin (S) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (A) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (D) {
+      direction : input ;
+      capacitance : 0.0011 ;
+    }
+    pin (Y) {
+      direction : output ;
+      max_capacitance : 0.08 ;
+      function : "(S&!D)|(A&D)" ;
+      timing () {
+        related_pin : "S" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+      timing () {
+        related_pin : "A" ;
+        timing_sense : non_unate ;
+        cell_rise (delay_2x2) {
+          values ("0.021, 0.034", \
+                  "0.029, 0.041") ;
+        }
+        cell_fall (delay_2x2) {
+          values ("0.019, 0.031", \
+                  "0.027, 0.038") ;
+        }
+      }
+    }
+  }
+  /* sequential cell */
+  cell (SDF1) {
+    area : 6.2 ;
+    ff (IQ, IQN) {
+      next_state : "(D&!SE)|(SI&SE)" ;
+      clocked_on : "CK" ;
+    }
+    pin (D) { direction : input ; capacitance : 0.001 ; nextstate_type : data ; }
+    pin (SI) { direction : input ; capacitance : 0.001 ; nextstate_type : scan_in ; }
+    pin (SE) { direction : input ; capacitance : 0.001 ; nextstate_type : scan_enable ; }
+    pin (CK) { direction : input ; capacitance : 0.001 ; clock : true ; }
+    pin (Q) {
+      direction : output ;
+      function : "IQ" ;
+      timing () { related_pin : "CK" ; timing_type : rising_edge ; }
+    }
+    test_cell () {
+      ff (IQ, IQN) { next_state : "D" ; clocked_on : "CK" ; }
+      pin (D) { direction : input ; }
+      pin (SI) { direction : input ; signal_type : test_scan_in ; }
+      pin (SE) { direction : input ; signal_type : test_scan_enable ; }
+      pin (CK) { direction : input ; }
+      pin (Q) { direction : output ; function : "IQ" ; signal_type : test_scan_out ; }
+    }
+  }
+  cell (FILL1) {
+    area : 0.2 ;
+    dont_use : true ;
+  }
+}

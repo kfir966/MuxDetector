@@ -1,0 +1,24 @@
+cell,output_pin,classification,inverting,select_pins,data_pins,notes
+XQ_701,Z,MUX2,no,S,I0/I1,
+XQ_702,ZN,MUX2,yes,S0,A/B,
+BLK_A,Y,NOT_MUX,,,,"active input count is not 3, 6, or 11"
+BLK_B,YN,NOT_MUX,,,,"active input count is not 3, 6, or 11"
+ZZ9,Y,MUX4,no,S0/S1,D0/D1/D2/D3,
+ZZ10,O,MUX4,no,P/Q,W/X/Y/Z,
+KX2,Y,NOT_MUX,,,,"active input count is not 3, 6, or 11"
+KX3,Y,NOT_MUX,,,,"active input count is not 3, 6, or 11"
+GT1,Y,NOT_MUX,,,,"active input count is not 3, 6, or 11"
+RD1,Y,MUX2,no,S,A/B,
+SP1,Y,MUX2,no,S,B/A,
+MI1,Y,NOT_MUX,,,,function does not satisfy MUX data/select partition
+JX1,Y,MUX2,no,S,A/B,
+XF1,Y,MUX2,no,S,A/B,
+XF2,Y,NOT_MUX,,,,function does not satisfy MUX data/select partition
+LIE_MUX2,Y,NOT_MUX,,,,function does not satisfy MUX data/select partition
+DUAL1,Y,MUX2,no,S,A/B,
+DUAL1,YN,MUX2,yes,S,A/B,
+BUF1,Y,NOT_MUX,,,,"active input count is not 3, 6, or 11"
+MX2T,Y,NOT_MUX,,,,tri-state output excluded by policy
+SW1,Y,MUX2,no,D,S/A,
+SDF1,-,SEQUENTIAL,,,,
+FILL1,-,NO_FUNCTION,,,,no output pin or function

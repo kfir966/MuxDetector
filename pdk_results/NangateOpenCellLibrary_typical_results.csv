@@ -1,0 +1,138 @@
+cell,output_pin,classification,inverting,select_pins,data_pins,notes
+AND2_X1,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+AND2_X2,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+AND2_X4,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+AND3_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AND3_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AND3_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AND4_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AND4_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AND4_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+ANTENNA_X1,-,NO_FUNCTION,,,,no output pin or function
+AOI21_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AOI21_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AOI21_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AOI22_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AOI22_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AOI22_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AOI211_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AOI211_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AOI211_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+AOI221_X1,ZN,NOT_MUX,,,,"active input count is 5, not 3, 6, or 11"
+AOI221_X2,ZN,NOT_MUX,,,,"active input count is 5, not 3, 6, or 11"
+AOI221_X4,ZN,NOT_MUX,,,,"active input count is 5, not 3, 6, or 11"
+AOI222_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AOI222_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+AOI222_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+BUF_X1,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+BUF_X2,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+BUF_X4,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+BUF_X8,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+BUF_X16,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+BUF_X32,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+CLKBUF_X1,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+CLKBUF_X2,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+CLKBUF_X3,Z,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+CLKGATETST_X1,-,SEQUENTIAL,,,,
+CLKGATETST_X2,-,SEQUENTIAL,,,,
+CLKGATETST_X4,-,SEQUENTIAL,,,,
+CLKGATETST_X8,-,SEQUENTIAL,,,,
+CLKGATE_X1,-,SEQUENTIAL,,,,
+CLKGATE_X2,-,SEQUENTIAL,,,,
+CLKGATE_X4,-,SEQUENTIAL,,,,
+CLKGATE_X8,-,SEQUENTIAL,,,,
+DFFRS_X1,-,SEQUENTIAL,,,,
+DFFRS_X2,-,SEQUENTIAL,,,,
+DFFR_X1,-,SEQUENTIAL,,,,
+DFFR_X2,-,SEQUENTIAL,,,,
+DFFS_X1,-,SEQUENTIAL,,,,
+DFFS_X2,-,SEQUENTIAL,,,,
+DFF_X1,-,SEQUENTIAL,,,,
+DFF_X2,-,SEQUENTIAL,,,,
+DLH_X1,-,SEQUENTIAL,,,,
+DLH_X2,-,SEQUENTIAL,,,,
+DLL_X1,-,SEQUENTIAL,,,,
+DLL_X2,-,SEQUENTIAL,,,,
+FA_X1,CO,NOT_MUX,,,,wrong number of binate select inputs
+FA_X1,S,NOT_MUX,,,,wrong number of binate select inputs
+FILLCELL_X1,-,NO_FUNCTION,,,,no output pin or function
+TAPCELL_X1,-,NO_FUNCTION,,,,no output pin or function
+FILLCELL_X2,-,NO_FUNCTION,,,,no output pin or function
+FILLCELL_X4,-,NO_FUNCTION,,,,no output pin or function
+FILLCELL_X8,-,NO_FUNCTION,,,,no output pin or function
+FILLCELL_X16,-,NO_FUNCTION,,,,no output pin or function
+FILLCELL_X32,-,NO_FUNCTION,,,,no output pin or function
+HA_X1,CO,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+HA_X1,S,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+INV_X1,ZN,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+INV_X2,ZN,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+INV_X4,ZN,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+INV_X8,ZN,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+INV_X16,ZN,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+INV_X32,ZN,NOT_MUX,,,,"active input count is 1, not 3, 6, or 11"
+LOGIC0_X1,Z,NOT_MUX,,,,"active input count is 0, not 3, 6, or 11"
+LOGIC1_X1,Z,NOT_MUX,,,,"active input count is 0, not 3, 6, or 11"
+MUX2_X1,Z,MUX2,no,S,A/B,
+MUX2_X2,Z,MUX2,no,S,A/B,
+NAND2_X1,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+NAND2_X2,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+NAND2_X4,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+NAND3_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+NAND3_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+NAND3_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+NAND4_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+NAND4_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+NAND4_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+NOR2_X1,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+NOR2_X2,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+NOR2_X4,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+NOR3_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+NOR3_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+NOR3_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+NOR4_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+NOR4_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+NOR4_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI21_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OAI21_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OAI21_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OAI22_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI22_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI22_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI33_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OAI211_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI211_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI211_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OAI221_X1,ZN,NOT_MUX,,,,"active input count is 5, not 3, 6, or 11"
+OAI221_X2,ZN,NOT_MUX,,,,"active input count is 5, not 3, 6, or 11"
+OAI221_X4,ZN,NOT_MUX,,,,"active input count is 5, not 3, 6, or 11"
+OAI222_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OAI222_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OAI222_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OR2_X1,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+OR2_X2,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+OR2_X4,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+OR3_X1,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OR3_X2,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OR3_X4,ZN,NOT_MUX,,,,wrong number of binate select inputs
+OR4_X1,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OR4_X2,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+OR4_X4,ZN,NOT_MUX,,,,"active input count is 4, not 3, 6, or 11"
+SDFFRS_X1,-,SEQUENTIAL,,,,
+SDFFRS_X2,-,SEQUENTIAL,,,,
+SDFFR_X1,-,SEQUENTIAL,,,,
+SDFFR_X2,-,SEQUENTIAL,,,,
+SDFFS_X1,-,SEQUENTIAL,,,,
+SDFFS_X2,-,SEQUENTIAL,,,,
+SDFF_X1,-,SEQUENTIAL,,,,
+SDFF_X2,-,SEQUENTIAL,,,,
+TBUF_X1,Z,NOT_MUX,,,,tri-state output excluded by policy
+TBUF_X2,Z,NOT_MUX,,,,tri-state output excluded by policy
+TBUF_X4,Z,NOT_MUX,,,,tri-state output excluded by policy
+TBUF_X8,Z,NOT_MUX,,,,tri-state output excluded by policy
+TBUF_X16,Z,NOT_MUX,,,,tri-state output excluded by policy
+TINV_X1,ZN,NOT_MUX,,,,tri-state output excluded by policy
+TLAT_X1,-,SEQUENTIAL,,,,
+XNOR2_X1,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+XNOR2_X2,ZN,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+XOR2_X1,Z,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"
+XOR2_X2,Z,NOT_MUX,,,,"active input count is 2, not 3, 6, or 11"

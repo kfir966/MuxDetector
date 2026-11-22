@@ -1,0 +1,8 @@
+tmp
+.github/
+*.egg-info/
+analysis.csv
+tests/__pycache__
+plan*
+__pycache__/
+*.py[cod]

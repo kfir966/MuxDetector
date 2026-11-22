@@ -1,0 +1,9 @@
+cell,output_pin,classification,inverting,select_pins,data_pins
+XQ_701,Z,MUX2,no,S,I0/I1
+XQ_702,ZN,MUX2,yes,S0,A/B
+BLK_A,Y,NOT_MUX,,,
+ZZ9,Y,MUX4,no,S0/S1,D0/D1/D2/D3
+KX2,Y,NOT_MUX,,,
+GT1,Y,NOT_MUX,,,
+SDF1,-,SEQUENTIAL,,,
+FILL1,-,NO_FUNCTION,,,
